@@ -1,0 +1,448 @@
+.songs-finder-container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #121212 0%, #1e1e1e 100%);
+}
+
+.app-bar {
+  background: linear-gradient(135deg, #1db954, #1ed760) !important;
+  box-shadow: 0 4px 20px rgba(29, 185, 84, 0.3) !important;
+}
+
+.app-bar-icon {
+  margin-right: 10px;
+  font-size: 28px !important;
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app-bar-title {
+  font-weight: 700 !important;
+  letter-spacing: 1px;
+}
+
+.user-chip {
+  margin-right: 15px !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.logout-button {
+  text-transform: none !important;
+  font-weight: 600 !important;
+}
+
+.main-container {
+  padding-top: 40px !important;
+  padding-bottom: 60px !important;
+}
+
+.search-section {
+  text-align: center;
+  margin-bottom: 50px;
+  animation: fadeIn 0.8s ease-out;
+  padding: 60px 20px;
+  border-radius: 20px;
+  background: 
+    linear-gradient(135deg, 
+      rgba(29, 185, 84, 0.15) 0%,
+      rgba(138, 43, 226, 0.12) 25%,
+      rgba(30, 144, 255, 0.12) 50%,
+      rgba(255, 105, 180, 0.12) 75%,
+      rgba(255, 215, 0, 0.12) 100%
+    ),
+    linear-gradient(45deg, 
+      rgba(29, 185, 84, 0.08) 0%,
+      rgba(64, 224, 208, 0.08) 50%,
+      rgba(138, 43, 226, 0.08) 100%
+    );
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite, fadeIn 0.8s ease-out;
+  box-shadow: 
+    0 10px 40px rgba(29, 185, 84, 0.2),
+    inset 0 0 60px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.search-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 30% 50%, rgba(29, 185, 84, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 70% 50%, rgba(138, 43, 226, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 50% 80%, rgba(30, 144, 255, 0.12) 0%, transparent 50%);
+  animation: rotateGlow 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.main-title {
+  font-weight: 700 !important;
+  margin-bottom: 15px !important;
+  background: linear-gradient(135deg, #1db954, #1ed760);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: slideDown 0.6s ease-out;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 2px 8px rgba(29, 185, 84, 0.3));
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.subtitle {
+  color: #e0e0e0 !important;
+  margin-bottom: 30px !important;
+  font-size: 1.1rem !important;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.search-form {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.language-select {
+  min-width: 180px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+.language-select .MuiOutlinedInput-root {
+  border-radius: 12px;
+}
+
+.language-select:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.search-input-wrapper {
+  flex: 1;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  min-width: 300px;
+}
+
+.search-input {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50px !important;
+  transition: all 0.3s ease;
+}
+
+.search-input:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(29, 185, 84, 0.2);
+}
+
+.search-input .MuiOutlinedInput-root {
+  border-radius: 50px !important;
+  padding-right: 8px;
+}
+
+.search-input .MuiOutlinedInput-root.Mui-focused {
+  box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.3);
+}
+
+.search-icon {
+  color: #1db954;
+  font-size: 28px !important;
+}
+
+.search-button {
+  background: linear-gradient(135deg, #1db954, #1ed760) !important;
+  color: white !important;
+  transition: all 0.3s ease !important;
+}
+
+.search-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(29, 185, 84, 0.5);
+}
+
+.search-submit-button {
+  padding: 14px 32px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  background: linear-gradient(135deg, #1db954, #1ed760) !important;
+  border-radius: 50px !important;
+  text-transform: none !important;
+  box-shadow: 0 4px 15px rgba(29, 185, 84, 0.4) !important;
+  transition: all 0.3s ease !important;
+  white-space: nowrap;
+  height: 56px;
+  min-width: 120px;
+}
+
+.search-submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(29, 185, 84, 0.6) !important;
+}
+
+.search-submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.loading-container {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.loading-spinner {
+  color: #1db954 !important;
+  margin-bottom: 20px;
+}
+
+.loading-text {
+  color: #b3b3b3;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.no-results {
+  text-align: center;
+  padding: 80px 20px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.no-results-icon {
+  font-size: 100px !important;
+  color: #535353;
+  margin-bottom: 20px;
+}
+
+.results-section {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.results-title {
+  margin-bottom: 30px !important;
+  color: #1db954 !important;
+  font-weight: 600 !important;
+}
+
+.song-card {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 15px !important;
+  transition: all 0.3s ease !important;
+  overflow: hidden;
+  animation: cardFadeIn 0.5s ease-out;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.song-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(29, 185, 84, 0.3) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.song-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 16px !important;
+}
+
+.song-title {
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #ffffff !important;
+}
+
+.artist-name {
+  color: #b3b3b3 !important;
+  margin-bottom: 4px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.album-name {
+  color: #808080 !important;
+  display: block;
+  margin-bottom: 12px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.song-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.meta-chip {
+  background: rgba(29, 185, 84, 0.2) !important;
+  color: #1db954 !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba(29, 185, 84, 0.3) !important;
+}
+
+.welcome-section {
+  text-align: center;
+  padding: 100px 20px;
+  animation: fadeIn 1s ease-out;
+}
+
+.welcome-icon {
+  font-size: 120px !important;
+  color: #1db954;
+  margin-bottom: 30px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.welcome-title {
+  font-weight: 700 !important;
+  margin-bottom: 15px !important;
+  background: linear-gradient(135deg, #1db954, #1ed760);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 960px) {
+  .main-title {
+    font-size: 2rem !important;
+  }
+  
+  .search-section {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-title {
+    font-size: 1.8rem !important;
+  }
+  
+  .subtitle {
+    font-size: 0.95rem !important;
+  }
+  
+  .app-bar-title {
+    font-size: 1.1rem !important;
+  }
+  
+  .user-chip {
+    display: none !important;
+  }
+  
+  .logout-button span {
+    display: none;
+  }
+  
+  .card-image {
+    height: 180px;
+  }
+  
+  .search-form {
+    flex-direction: column;
+  }
+  
+  .language-select {
+    width: 100%;
+  }
+  
+  .search-input-wrapper {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .search-submit-button {
+    width: 100%;
+  }
+}
